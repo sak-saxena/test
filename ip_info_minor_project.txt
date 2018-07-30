@@ -1,0 +1,2128 @@
+import java.util.*;
+class main_page											//main page
+{
+    public static void main(String args[])
+    {
+        first_page fp=new first_page();
+        fp.function1();
+    }
+}
+
+import java.util.*;										//first page
+import java.awt.*;
+import java.awt.event.*;  
+import javax.swing.*;
+class first_page
+{
+    public static void function1()
+    {
+        JFrame f=new JFrame("First Page");
+        
+        JLabel l1=new JLabel("W e l c o m e");
+        JLabel l2=new JLabel("t o");
+        JLabel l3=new JLabel("I P _ I n f o . . . .");
+        l1.setBounds(200,100, 600,180);
+        l2.setBounds(300,150, 600,180);        
+        l3.setBounds(200,200, 600,180);
+        l1.setFont(new Font("monotype corsiva", Font.BOLD, 60));
+        l2.setFont(new Font("monotype corsiva", Font.BOLD, 60));
+        l3.setFont(new Font("monotype corsiva", Font.BOLD, 60));
+        f.add(l1);f.add(l2);f.add(l3);
+        
+        ImageIcon ii = new ImageIcon("C:/Users/Sarthak/Desktop/ip_info/p2.jpg");
+        JLabel lable = new JLabel(ii);
+        JScrollPane jsp = new JScrollPane(lable);
+        f.getContentPane().add(jsp);
+        
+        f.setSize(1000, 700);
+        JButton b=new JButton("G O ->");
+        b.setFont(new Font("monotype corsiva", Font.BOLD, 40));
+        b.setBounds(250,350,220,50);
+        b.setToolTipText("Click to go ahead");
+        DigitalWatch dw=new DigitalWatch(f);
+        b.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                second_page sp=new second_page();
+                sp.function2();
+                f.dispose(); 
+            }});
+        f.add(b);
+        f.setSize(800,600);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
+
+
+import java.util.*;							//second page
+import java.awt.*;
+import java.awt.event.*;  
+import javax.swing.*;
+class second_page
+{
+    static int flag=0;
+    public static void function2()
+    {
+        JFrame f=new JFrame("Second Page");
+        JFrame fnew=new JFrame("Alert!!");
+        JRadioButton rb1=new JRadioButton("Decimal");
+        JRadioButton rb2=new JRadioButton("Binary");
+        rb1.setBounds(100,50,200,30);
+        rb2.setBounds(600,50,200,30);
+        rb1.setFont(new Font("monotype corsiva", Font.BOLD, 20));
+        rb2.setFont(new Font("monotype corsiva", Font.BOLD, 20));
+        ButtonGroup bg=new ButtonGroup();    
+        bg.add(rb1);bg.add(rb2);   
+        
+        JButton b1=new JButton("I p v 4 ( C l a s s f u l )");
+        JButton b2=new JButton("I p v 4 ( C I D R   -   C l a s s l e s s )");
+        JButton b3=new JButton("I p v 6");
+        b1.setBounds(0,100,800,130);
+        b2.setBounds(0,230,800,130);
+        b3.setBounds(0,360,800,130);
+        b1.setFont(new Font("monotype corsiva", Font.BOLD, 25));
+        b2.setFont(new Font("monotype corsiva", Font.BOLD, 25));
+        b3.setFont(new Font("monotype corsiva", Font.BOLD, 25));
+        JButton prev=new JButton("Previous");
+        prev.setBounds(320,515,150,50);
+        f.add(prev);
+        
+        f.add(b1);f.add(b2);f.add(b3);  
+        f.add(rb1);f.add(rb2);
+        
+        prev.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                first_page fp=new first_page();
+                fp.function1();
+                f.dispose(); 
+            }});
+          
+            
+            b1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+            if(rb1.isSelected())
+            {
+             third_one_page tp=new third_one_page();
+                tp.function3(flag);
+                f.dispose();
+            }
+            else if(rb2.isSelected())
+            {
+                flag=1;
+             third_one_page tp=new third_one_page();
+             
+                tp.function3(flag);
+                f.dispose();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(fnew,"Please select Decimal or Binary");
+            }
+            }});
+            
+            b2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+            if(rb1.isSelected())
+            {
+             third_two_page tp=new third_two_page();
+                tp.function33(flag);
+                f.dispose();
+            }
+            else if(rb2.isSelected())
+            {
+                flag=1;
+             third_two_page tp=new third_two_page();
+                tp.function33(flag);
+                f.dispose();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(fnew,"Please select Decimal or Binary");
+            }
+            }});
+            
+             b3.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+            if(rb1.isSelected())
+            {
+             third_one_page tp=new third_one_page();
+                tp.function3(flag);
+                f.dispose();
+            }
+            else if(rb2.isSelected())
+            {
+                flag=1;
+             third_two_page tp=new third_two_page();
+                tp.function33(flag);
+                f.dispose();
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(fnew,"Please select Decimal or Binary");
+            }
+            }});
+           
+    
+            
+        
+           
+        f.setSize(800,600);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
+
+
+
+import java.util.*;								//third_one_page
+import java.awt.*;
+import java.awt.event.*;  
+import javax.swing.*;
+class third_one_page
+{
+    static int n1=0,n2=0,n3=0,n4=0,n5=0,n6=0,n7=0,n8=0,n9=0,n10=0,n11=0;
+    public static void function3(int flag)
+    {
+        
+        JFrame fnew=new JFrame("Alert");
+        JFrame f=new JFrame("Third Page");
+        JLabel l=new JLabel("Enter IP Address (Classful)");
+        l.setBounds(200,100,200,50);
+        l.setFont(new Font("monotype corsiva", Font.BOLD, 30));
+        JTextField ta=new JTextField();
+        l.setBounds(200,50,400,100);
+        ta.setBounds(180,150,450,30);
+        Font fa = ta.getFont();
+        Font f2 = new Font(fa.getFontName(), fa.getStyle(), fa.getSize()+10);
+        ta.setFont(f2);
+        f.add(l);f.add(ta);
+        JCheckBox cb1 = new JCheckBox("C l a s s");    
+        cb1.setBounds(50,250,250,50);    
+        JCheckBox cb2 = new JCheckBox("S u b n e t   N u m b e r ");    
+        cb2.setBounds(500,250, 250,50);    
+        JCheckBox cb3 = new JCheckBox("N o . O f   V a l i d   H o s t   I d");
+        cb3.setBounds(50,300, 250,50);    
+        JCheckBox cb4 = new JCheckBox("N o . O f   H o s t   I d");    
+        cb4.setBounds(50,350, 250,50);    
+        JCheckBox cb5 = new JCheckBox("F i r s t   H o s t   I d");
+        cb5.setBounds(50,400, 250,50);    
+        JCheckBox cb6 = new JCheckBox("L a s t   H o s t   I d");    
+        cb6.setBounds(50,450, 250,50); 
+        JCheckBox cb7 = new JCheckBox("D i r e c t   B r o a d c a s t");
+        cb7.setBounds(500,300,250,50);    
+        JCheckBox cb8 = new JCheckBox("L i m i t e d   B r o a d c a s t");    
+        cb8.setBounds(500,350,250,50); 
+        JCheckBox cb9= new JCheckBox("N o . o f   S u b n e t s");    
+        cb9.setBounds(500,400,250,50); 
+        JCheckBox cb10= new JCheckBox("A l l   I P   I n f o");    
+        cb10.setBounds(300,200,250,50);
+        cb10.setBounds(300,200,250,50);
+        JCheckBox cb11= new JCheckBox("P r i v a t e  o r   P u b l i c");    
+        cb11.setBounds(500,450,250,50);
+        
+        JButton prev=new JButton("Previous");
+        prev.setBounds(0,525,150,45);
+        f.add(prev);
+        JButton nxt=new JButton("Next");
+        nxt.setBounds(635,525,150,45);
+        f.add(nxt);
+        
+        cb1.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n1=1;
+                }});
+        
+        cb2.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n2=1;
+                }});
+                
+                
+        cb3.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n3=1;
+                }});
+                
+        cb4.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n4=1;
+                }});
+                
+        cb5.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n5=1;
+                }});
+                
+        cb6.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n6=1;
+                }});
+                
+        cb7.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n7=1;
+                }});
+                
+        cb8.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n8=1;
+                }});
+                
+        cb9.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n9=1;
+                }});
+                
+        cb10.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n10=1;
+                }});
+                
+        cb11.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n11=1;
+                }});
+                
+            prev.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                second_page fp=new second_page();
+                fp.function2();
+                f.dispose(); 
+            }});
+          
+           
+                    
+            nxt.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                String s1,s2,s3,s4,str;
+                String ss1;
+                str=ta.getText();
+                if(string_control(str,flag))
+                {
+                    final_page fp=new final_page();
+                    fp.function5(n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,str,flag);
+                    f.dispose(); 
+                   
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(fnew,"Please Enter A Valid IP Address");
+                }
+                  
+            }});
+          
+
+          
+          
+        
+        f.add(cb1);f.add(cb2);f.add(cb3);f.add(cb4);f.add(cb5);f.add(cb6);f.add(cb7);f.add(cb8);f.add(cb9);f.add(cb10);f.add(cb11);
+        f.setSize(800,600);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+    public static boolean string_control(String str,int flag)
+    {
+        int count=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)=='.')
+            count++;
+        }
+        for(int i=0;i<str.length()-1;i++)
+        {
+            if(str.charAt(i)=='.'&&str.charAt(i+1)=='.')
+            return false;
+        }
+        if(count!=3)
+        return false;
+        String a[]=str.split("\\.");
+        String str1=a[0];String str2=a[1];String str3=a[2];String str4=a[3];
+        for(int i=0;i<str1.length();i++)
+        {
+            if((int)str1.charAt(i)>=48&&(int)str1.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str2.length();i++)
+        {
+            if((int)str2.charAt(i)>=48&&(int)str2.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str3.length();i++)
+        {
+            if((int)str3.charAt(i)>=48&&(int)str3.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str4.length();i++)
+        {
+            if((int)str4.charAt(i)>=48&&(int)str4.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        
+        if(flag==1)
+        {
+            if(str1.length()!=8||str2.length()!=8||str3.length()!=8||str4.length()!=8)
+        {
+            return false;
+        }
+        }
+         if(flag==0)
+       {
+           if((Integer.parseInt(str1)<0||Integer.parseInt(str1)>255)||(Integer.parseInt(str2)<0||Integer.parseInt(str2)>255)||(Integer.parseInt(str3)<0||Integer.parseInt(str3)>255)||(Integer.parseInt(str4)<0||Integer.parseInt(str4)>255))
+        {
+            return false;
+        }
+       }
+          
+        if(flag==1)
+        {
+            int s1=Integer.parseInt(str1,2);
+            int s2=Integer.parseInt(str2,2);
+            int s3=Integer.parseInt(str3,2);
+            int s4=Integer.parseInt(str4,2);
+            str1=Integer.toString(s1);str2=Integer.toString(s2);str3=Integer.toString(s3);str4=Integer.toString(s4);
+             for(int i=0;i<str1.length();i++)
+        {
+            if((int)str1.charAt(i)>=48&&(int)str1.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str2.length();i++)
+        {
+            if((int)str2.charAt(i)>=48&&(int)str2.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str3.length();i++)
+        {
+            if((int)str3.charAt(i)>=48&&(int)str3.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str4.length();i++)
+        {
+            if((int)str4.charAt(i)>=48&&(int)str4.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str.length()-1;i++)
+        {
+            if(str.charAt(i)=='.'&&str.charAt(i+1)=='.')
+            return false;
+        }
+        }
+        return true; 
+    }
+    
+}
+
+
+
+
+import java.util.*;						//third_two_page
+import java.awt.*;
+import java.awt.event.*;  
+import javax.swing.*;
+class third_two_page
+{
+    static int n1=0,n2=0,n3=0,n4=0,n5=0,n6=0,n7=0,n8=0,n9=0,n10=0,n11=0;
+    public static void function33(int flag)
+    {
+        JFrame f=new JFrame("Third Page");
+        JFrame fnew=new JFrame("Alert");
+        JLabel l=new JLabel("Enter IP Address (Classless)");
+        l.setBounds(100,100,400,50);
+        l.setFont(new Font("monotype corsiva", Font.BOLD, 30));
+        JLabel ll=new JLabel("Mask");
+        ll.setBounds(540,100,100,50);
+        ll.setFont(new Font("monotype corsiva", Font.BOLD, 30));
+        JTextArea ta=new JTextArea();
+        ta.setBounds(80,150,450,30);
+        JTextArea tb=new JTextArea();
+        tb.setBounds(550,150,50,30);
+        Font fa = ta.getFont();
+        Font f2 = new Font(fa.getFontName(), fa.getStyle(), fa.getSize()+10);
+        ta.setFont(f2);
+        Font fb = tb.getFont();
+        Font f1 = new Font(fb.getFontName(), fb.getStyle(), fb.getSize()+10);
+        tb.setFont(f1);
+        f.add(l);f.add(ll);f.add(ta);f.add(tb);
+        JCheckBox cb1 = new JCheckBox("Class");    
+        cb1.setBounds(50,250,250,50);    
+        cb1.setEnabled(false);
+        JCheckBox cb2 = new JCheckBox("S u b n e t  N u m b e r");    
+        cb2.setBounds(500,250, 250,50);    
+        JCheckBox cb3 = new JCheckBox("N o . O f   V a l i d   H o s t   I d");
+        cb3.setBounds(50,300, 250,50);    
+        JCheckBox cb4 = new JCheckBox("N o . O f   H o s t   I d");    
+        cb4.setBounds(50,350, 250,50);    
+        JCheckBox cb5 = new JCheckBox("F i r s t   H o s t   I d");
+        cb5.setBounds(50,400, 250,50);    
+        JCheckBox cb6 = new JCheckBox("L a s t   H o s t   I d");    
+        cb6.setBounds(50,450, 250,50); 
+        JCheckBox cb7 = new JCheckBox("D i r e c t   B r o a d c a s t");
+        cb7.setBounds(500,300,250,50);    
+        JCheckBox cb8 = new JCheckBox("L i m i t e d   B r o a d c a s t");    
+        cb8.setBounds(500,350,250,50); 
+        JCheckBox cb9= new JCheckBox("N o . o f   S u b n e t s");    
+        cb9.setBounds(500,400,250,50); 
+        cb9.setEnabled(false);
+        JCheckBox cb10= new JCheckBox("A l l   I P   I n f o");    
+        cb10.setBounds(300,200,250,50);
+        JCheckBox cb11= new JCheckBox("P r i v a t e  o r   P u b l i c");    
+        cb11.setBounds(500,450,250,50);
+        
+        JButton prev=new JButton("Previous");
+        prev.setBounds(0,525,150,45);
+        f.add(prev);
+        JButton nxt=new JButton("Next");
+        nxt.setBounds(635,525,150,45);
+        f.add(nxt);
+        
+        cb1.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n1=1;
+                }});
+        
+        cb2.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n2=1;
+                }});
+                
+                
+        cb3.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n3=1;
+                }});
+                
+        cb4.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n4=1;
+                }});
+                
+        cb5.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n5=1;
+                }});
+                
+        cb6.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n6=1;
+                }});
+                
+        cb7.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n7=1;
+                }});
+                
+        cb8.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n8=1;
+                }});
+                
+        cb9.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n9=1;
+                }});
+                
+        cb10.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n10=1;
+                }});
+                
+        cb11.addItemListener(new ItemListener() {    
+             public void itemStateChanged(ItemEvent e) {  
+                 if(e.getStateChange()==1)
+                 n11=1;
+                }});
+                
+        prev.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                second_page fp=new second_page();
+                fp.function2();
+                f.dispose(); 
+            }});
+            
+              
+            nxt.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                String s1,s2,s3,s4,str;
+                String ss1;
+                str=ta.getText();
+                String m=tb.getText();
+                int mask=Integer.parseInt(m);
+               if(string_control(str,flag,m))
+                {
+                    final_page_mask fpm=new final_page_mask();
+                    fpm.function6(n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,str,flag,mask);
+                    f.dispose();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(fnew,"Please Enter A Valid IP Address");
+                }
+                
+            }});
+           
+        f.add(cb1);f.add(cb2);f.add(cb3);f.add(cb4);f.add(cb5);f.add(cb6);f.add(cb7);f.add(cb8);f.add(cb9);f.add(cb10);f.add(cb11);
+        f.setSize(800,600);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+     public static boolean string_control(String str,int flag,String mask)
+    {
+        for(int i=0;i<str.length()-1;i++)
+        {
+            if(str.charAt(i)=='.'&&str.charAt(i+1)=='.')
+            return false;
+        }
+        int n=Integer.parseInt(mask);
+        if(n<0||n>32)
+        return false;
+        
+        int count=0;
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)=='.')
+            count++;
+        }
+            
+        if(count!=3)
+        return false;
+        String a[]=str.split("\\.");
+        String str1=a[0];String str2=a[1];String str3=a[2];String str4=a[3];
+         for(int i=0;i<str1.length();i++)
+        {
+            if((int)str1.charAt(i)>=48&&(int)str1.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str2.length();i++)
+        {
+            if((int)str2.charAt(i)>=48&&(int)str2.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str3.length();i++)
+        {
+            if((int)str3.charAt(i)>=48&&(int)str3.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str4.length();i++)
+        {
+            if((int)str4.charAt(i)>=48&&(int)str4.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        if(flag==1)
+        {
+            if(str1.length()!=8||str2.length()!=8||str3.length()!=8||str4.length()!=8)
+        {
+            return false;
+        }
+        }
+         if(flag==0)
+       {
+           if((Integer.parseInt(str1)<0||Integer.parseInt(str1)>255)||(Integer.parseInt(str2)<0||Integer.parseInt(str2)>255)||(Integer.parseInt(str3)<0||Integer.parseInt(str3)>255)||(Integer.parseInt(str4)<0||Integer.parseInt(str4)>255))
+        {
+            return false;
+        }
+    }
+          
+        if(flag==1)
+        {
+            int s1=Integer.parseInt(str1,2);
+            int s2=Integer.parseInt(str2,2);
+            int s3=Integer.parseInt(str3,2);
+            int s4=Integer.parseInt(str4,2);
+            str1=Integer.toString(s1);str2=Integer.toString(s2);str3=Integer.toString(s3);str4=Integer.toString(s4);
+         
+        
+            for(int i=0;i<str.length()-1;i++)
+        {
+            if(str.charAt(i)=='.'&&str.charAt(i+1)=='.')
+            return false;
+        }
+             for(int i=0;i<str1.length();i++)
+        {
+            if((int)str1.charAt(i)>=48&&(int)str1.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str2.length();i++)
+        {
+            if((int)str2.charAt(i)>=48&&(int)str2.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str3.length();i++)
+        {
+            if((int)str3.charAt(i)>=48&&(int)str3.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        for(int i=0;i<str4.length();i++)
+        {
+            if((int)str4.charAt(i)>=48&&(int)str4.charAt(i)<=57)
+            return true;
+            else
+            return false;
+        }
+        }
+        return true; 
+    }
+    
+}
+
+import java.util.*;						//final_page
+import java.awt.*;
+import java.awt.event.*;  
+import javax.swing.*;
+class final_page
+{
+    public static void function5(int n1,int n2,int n3,int n4,int n5,int n6,int n7,int n8,int n9,int n10,int n11,String str,int flag)
+    {
+        String s[]=str.split("\\.");
+        String s1=s[0];
+        String s2=s[1];
+        String s3=s[2];
+        String s4=s[3];  
+            if(flag==1)
+        {
+            int a1=Integer.parseInt(s1,2);
+            int a2=Integer.parseInt(s2,2);
+            int a3=Integer.parseInt(s3,2);
+            int a4=Integer.parseInt(s4,2);
+            s1=Integer.toString(a1);s2=Integer.toString(a2);s3=Integer.toString(a3);s4=Integer.toString(a4);
+        }
+        
+        String k1="",k2="",k3="",k4="",k5="",k6="",k7="",k8="",k9="",k11="";
+        String ss="-------------------";
+        JFrame ff=new JFrame("fourth Page");
+        JButton b1=new JButton("Previous");
+        JButton b2=new JButton("Home");
+        b1.setBounds(0,570,150,50);
+        b2.setBounds(635,570,150,50);
+        ff.add(b1);
+        ff.add(b2);
+        ff.setSize(800,650);
+        ff.setLayout(null);
+        ff.setVisible(true);
+        
+        class_name cn=new class_name();
+        String f1=cn.method1(s1,s2,s3,s4);
+        
+        subnet_number sn=new subnet_number();
+        String f2=sn.method2(s1,s2,s3,s4);
+        
+        valid_host vh=new valid_host();
+        String f3=vh.method3(s1,s2,s3,s4);
+        
+        number_of_host nh=new number_of_host();
+        String f4=nh.method4(s1,s2,s3,s4);
+        
+        first_id fi=new first_id();
+        String f5=fi.method5(s1,s2,s3,s4);
+        
+        last_id li=new last_id();
+        String f6=li.method6(s1,s2,s3,s4);
+        
+        directed_broadcasting db=new directed_broadcasting();
+        String f7=db.method7(s1,s2,s3,s4);
+        
+        limited_broadcasting lb=new limited_broadcasting();
+        String f8=lb.method8(s1,s2,s3,s4);
+        
+        number_of_subnet ns=new number_of_subnet();
+        String f9=ns.method9(s1,s2,s3,s4);
+        
+        public_private pp=new public_private();
+        String f11=pp.method11(s1,s2,s3,s4);
+        
+        if(n1==1)
+        k1=f1;
+        else
+        k1=ss;
+        
+        if(n2==1)
+         k2=f2;
+        else
+         k2=ss;
+        
+        if(n3==1)
+         k3=f3;
+        else
+         k3=ss;
+        
+        if(n4==1)
+         k4=f4;
+        else
+         k4=ss;
+        
+        if(n5==1)
+         k5=f5;
+        else
+         k5=ss;
+        
+        if(n6==1)
+         k6=f6;
+        else
+         k6=ss;
+        
+        if(n7==1)
+         k7=f7;
+        else
+         k7=ss;
+        
+        if(n8==1)
+         k8=f8;
+        else
+         k8=ss;
+        
+        if(n9==1)
+         k9=f9;
+        else
+         k9=ss;
+        
+        if(n11==1)
+         k11=f11;
+        else
+         k11=ss;
+        
+        if(n10==0)
+        {
+        JLabel l1=new JLabel("Class  :                                 "+k1);
+        l1.setBounds(80,50,600,50);
+        l1.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l1);
+        
+        JLabel l2=new JLabel("Subnet Number  :                "+k2);
+        l2.setBounds(80,100,600,50);
+        l2.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l2);
+        
+        JLabel l3=new JLabel("Valid Host:                           "+k3);
+        l3.setBounds(80,150,600,50);
+        l3.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l3);
+        
+        JLabel l4=new JLabel("Number of Host:                  "+k4);
+        l4.setBounds(80,200,600,50);
+        l4.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l4);
+        
+        JLabel l5=new JLabel("First ID :                                "+k5);
+        l5.setBounds(80,250,600,50);
+        l5.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l5);
+        
+        JLabel l6=new JLabel("Last ID :                                "+k6);
+        l6.setBounds(80,300,600,50);
+        l6.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l6);
+        
+        JLabel l7=new JLabel("Directed Broadcast :            "+k7);
+        l7.setBounds(80,350,600,50);
+        l7.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l7);
+        
+        JLabel l8=new JLabel("Limited Broadcast :              "+k8);
+        l8.setBounds(80,400,600,50);
+        l8.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l8);
+        
+        JLabel l9=new JLabel("Number of Subnet :             "+k9 );
+        l9.setBounds(80,450,600,50);
+        l9.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l9);
+        
+        JLabel l11=new JLabel("Public or Private:                 "+k11);
+        l11.setBounds(80,500,600,50);
+        l11.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l11);
+    }
+    else
+    {
+        JLabel l1=new JLabel("Class  :                                 "+f1);
+        l1.setBounds(80,50,600,50);
+        l1.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l1);
+        
+        JLabel l2=new JLabel("Subnet Number  :                "+f2);
+        l2.setBounds(80,100,600,50);
+        l2.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l2);
+        
+        JLabel l3=new JLabel("Valid Host:                           "+f3);
+        l3.setBounds(80,150,600,50);
+        l3.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l3);
+        
+        JLabel l4=new JLabel("Number of Host:                  "+f4);
+        l4.setBounds(80,200,600,50);
+        l4.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l4);
+        
+        JLabel l5=new JLabel("First ID :                                "+f5);
+        l5.setBounds(80,250,600,50);
+        l5.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l5);
+        
+        JLabel l6=new JLabel("Last ID :                                "+f6);
+        l6.setBounds(80,300,600,50);
+        l6.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l6);
+        
+        JLabel l7=new JLabel("Directed Broadcast :            "+f7);
+        l7.setBounds(80,350,600,50);
+        l7.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l7);
+        
+        JLabel l8=new JLabel("Limited Broadcast :              "+f8);
+        l8.setBounds(80,400,600,50);
+        l8.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l8);
+        
+        JLabel l9=new JLabel("Number of Subnet :             "+f9 );
+        l9.setBounds(80,450,600,50);
+        l9.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l9);
+        
+        JLabel l11=new JLabel("Public or Private:                 "+f11);
+        l11.setBounds(80,500,600,50);
+        l11.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l11);
+    }
+        b1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                third_one_page top=new third_one_page();
+                top.function3(flag);
+                ff.dispose(); 
+            }});
+        
+        b2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                first_page fp=new first_page();
+                fp.function1();
+                ff.dispose(); 
+            }});
+        
+    }
+}
+    
+	
+import java.util.*;							//final_page_mask
+import java.awt.*;
+import java.awt.event.*;  
+import javax.swing.*;
+class final_page_mask
+{
+    public static void function6(int n1,int n2,int n3,int n4,int n5,int n6,int n7,int n8,int n9,int n10,int n11,String str,int flag,int mask)
+    {
+        String s[]=str.split("\\.");
+        String s1=s[0];
+        String s2=s[1];
+        String s3=s[2];
+        String s4=s[3];  
+            if(flag==1)
+        {
+            int a1=Integer.parseInt(s1,2);
+            int a2=Integer.parseInt(s2,2);
+            int a3=Integer.parseInt(s3,2);
+            int a4=Integer.parseInt(s4,2);
+            s1=Integer.toString(a1);s2=Integer.toString(a2);s3=Integer.toString(a3);s4=Integer.toString(a4);
+        }
+        
+        String k1="",k2="",k3="",k4="",k5="",k6="",k7="",k8="",k9="",k11="";
+        String ss="-------------------";
+        JFrame ff=new JFrame("fourth Page");
+        JButton b1=new JButton("Previous");
+        JButton b2=new JButton("Home");
+        b1.setBounds(0,570,150,50);
+        b2.setBounds(635,570,150,50);
+        ff.add(b1);
+        ff.add(b2);
+        ff.setSize(800,650);
+        ff.setLayout(null);
+        ff.setVisible(true);
+        
+        //class_name cn=new class_name();
+        //String f1=cn.method1(s1,s2,s3,s4);
+        
+        subnet_number_ss sn=new subnet_number_ss();
+        String f2=sn.m1(s1,s2,s3,s4,mask);
+        
+        valid_host_ss vh=new valid_host_ss();
+        String f3=vh.m3(s1,s2,s3,s4,mask);
+        
+        number_of_host_ss nh=new number_of_host_ss();
+        String f4=nh.m4(s1,s2,s3,s4,mask);
+        
+        first_host_id_ss fi=new first_host_id_ss();
+        String f5=fi.m5(s1,s2,s3,s4,mask);
+        
+        last_host_id li=new last_host_id();
+        String f6=li.m6(s1,s2,s3,s4,mask);
+        
+        directed_broadcasting_ss db=new directed_broadcasting_ss();
+        String f7=db.m66(s1,s2,s3,s4,mask);
+        
+        limited_broadcasting_ss lb=new limited_broadcasting_ss();
+        String f8=lb.m7(s1,s2,s3,s4,mask);
+        
+        //number_of_subnet ns=new number_of_subnet();
+        //String f9=ns.method9(s1,s2,s3,s4);
+        
+        public_private pp=new public_private();
+        String f11=pp.method11(s1,s2,s3,s4);
+        
+       
+        /* if(n1==1)
+        k1=f1;
+        else
+        */k1=ss;
+        
+        
+        if(n2==1)
+         k2=f2;
+        else
+         k2=ss;
+        
+        if(n3==1)
+         k3=f3;
+        else
+         k3=ss;
+        
+        if(n4==1)
+         k4=f4;
+        else
+         k4=ss;
+        
+        if(n5==1)
+         k5=f5;
+        else
+         k5=ss;
+        
+        if(n6==1)
+         k6=f6;
+        else
+         k6=ss;
+        
+        if(n7==1)
+         k7=f7;
+        else
+         k7=ss;
+        
+        if(n8==1)
+         k8=f8;
+        else
+         k8=ss;
+        
+        /*if(n9==1)
+         k9=f9;
+        else
+         */k9=ss;
+        
+        if(n11==1)
+         k11=f11;
+        else
+         k11=ss;
+        
+         
+        if(n10==0)
+        {
+        JLabel l1=new JLabel("Class  :                                 "+k1);
+        l1.setBounds(80,50,600,50);
+        l1.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l1);
+        
+        JLabel l2=new JLabel("Subnet Number  :                "+k2);
+        l2.setBounds(80,100,600,50);
+        l2.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l2);
+        
+        JLabel l3=new JLabel("Valid Host:                           "+k3);
+        l3.setBounds(80,150,600,50);
+        l3.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l3);
+        
+        JLabel l4=new JLabel("Number of Host:                  "+k4);
+        l4.setBounds(80,200,600,50);
+        l4.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l4);
+        
+        JLabel l5=new JLabel("First ID :                                "+k5);
+        l5.setBounds(80,250,600,50);
+        l5.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l5);
+        
+        JLabel l6=new JLabel("Last ID :                                "+k6);
+        l6.setBounds(80,300,600,50);
+        l6.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l6);
+        
+        JLabel l7=new JLabel("Directed Broadcast :            "+k7);
+        l7.setBounds(80,350,600,50);
+        l7.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l7);
+        
+        JLabel l8=new JLabel("Limited Broadcast :              "+k8);
+        l8.setBounds(80,400,600,50);
+        l8.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l8);
+        
+        JLabel l9=new JLabel("Number of Subnet :             "+k9 );
+        l9.setBounds(80,450,600,50);
+        l9.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l9);
+        
+        JLabel l11=new JLabel("Public or Private:                 "+k11);
+        l11.setBounds(80,500,600,50);
+        l11.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l11);
+    }
+    else
+    {
+        JLabel l1=new JLabel("Class  :                                 "+"-------------------");
+        l1.setBounds(80,50,600,50);
+        l1.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l1);
+        
+        JLabel l2=new JLabel("Subnet Number  :                "+f2);
+        l2.setBounds(80,100,600,50);
+        l2.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l2);
+        
+        JLabel l3=new JLabel("Valid Host:                           "+f3);
+        l3.setBounds(80,150,600,50);
+        l3.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l3);
+        
+        JLabel l4=new JLabel("Number of Host:                  "+f4);
+        l4.setBounds(80,200,600,50);
+        l4.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l4);
+        
+        JLabel l5=new JLabel("First ID :                                "+f5);
+        l5.setBounds(80,250,600,50);
+        l5.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l5);
+        
+        JLabel l6=new JLabel("Last ID :                                "+f6);
+        l6.setBounds(80,300,600,50);
+        l6.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l6);
+        
+        JLabel l7=new JLabel("Directed Broadcast :            "+f7);
+        l7.setBounds(80,350,600,50);
+        l7.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l7);
+        
+        JLabel l8=new JLabel("Limited Broadcast :              "+f8);
+        l8.setBounds(80,400,600,50);
+        l8.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l8);
+        
+        JLabel l9=new JLabel("Number of Subnet :             "+"-------------------"             );
+        l9.setBounds(80,450,600,50);
+        l9.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l9);
+        
+        JLabel l11=new JLabel("Public or Private:                 "+f11);
+        l11.setBounds(80,500,600,50);
+        l11.setFont(new Font("aerial", Font.ITALIC, 30));
+        ff.add(l11);
+    }
+        b1.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                third_two_page top=new third_two_page();
+                top.function33(flag);
+                ff.dispose(); 
+            }});
+        
+        b2.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                first_page fp=new first_page();
+                fp.function1();
+                ff.dispose(); 
+            }});
+        
+    }
+}
+  
+import java.util.*; 				//class_name
+class class_name
+{
+    public static String method1(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="";
+        if(n1>=1&&n1<=126)
+        {
+            str="Class - A";
+        }
+        if(n1>=128&&n1<=191)
+        {
+            str="Class - B";
+        }
+        if(n1>=192&&n1<=223)
+        {
+            str="Class - C";
+        }
+        if(n1>=224&&n1<=239)
+        {
+            str="Class - D";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            str="Class - E";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            str="Special Cases";
+        }
+        return str;
+    }
+}
+          
+
+    import java.util.*;
+    
+    class valid_host				//valid_host
+    {
+        public static String method3(String s1,String s2,String s3,String s4)
+        {
+            int n1=Integer.parseInt(s1);
+            int n2=Integer.parseInt(s2);
+            int n3=Integer.parseInt(s3);
+            int n4=Integer.parseInt(s4);
+            String str="",s="";
+            double n=0;
+            int m=0;
+            if(n1>=1&&n1<=126)
+            {
+                n=Math.pow(2,24);
+                m=(int)n-2;
+                s=Integer.toString(m);
+                str="2^24 - 2 = "+s;
+            }
+            if(n1>=128&&n1<=191)
+            {
+                n=Math.pow(2,16);
+                m=(int)n-2;
+                s=Integer.toString(m);
+                str="2^16 - 2 = "+s;
+            }
+            if(n1>=192&&n1<=223)
+            {
+               n=Math.pow(2,8);
+                m=(int)n-2;
+                s=Integer.toString(m);
+                str="2^8 - 2 = "+s;
+            }
+            if(n1>=224&&n1<=239)
+            {
+                str="Special Cases";
+            }
+            if(n1>=240&&n1<=255&&n4!=255)
+            {
+                str="Special Cases";
+            }
+            if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+            {
+                str="Special Cases";
+            }
+            return str;
+        }
+    }
+ 
+import javax.swing.*;  					//DigitalWatch
+import java.awt.*;  
+import java.text.*;  
+import java.util.*;  
+public class DigitalWatch implements Runnable{  
+
+Thread t=null;  
+int hours=0, minutes=0, seconds=0;  
+String timeString = "";  
+JButton b;  
+  
+DigitalWatch(JFrame f)
+      {
+    t = new Thread(this);  
+        t.start();  
+      
+    b=new JButton();  
+        b.setBounds(300,0,800,50); 
+        b.setFont(new Font("monotype corsiva", Font.BOLD, 40));
+        b.setOpaque(false);
+        b.setContentAreaFilled(false);
+        b.setBorderPainted(false);
+      
+    f.add(b);  
+    //f.setSize(300,400);  
+    f.setLayout(null);  
+    f.setVisible(true);  
+}  
+  
+ public void run() {  
+      try {  
+         while (true) {  
+  
+            Calendar cal = Calendar.getInstance();  
+            hours = cal.get( Calendar.HOUR_OF_DAY );  
+            if ( hours > 12 ) hours -= 12;  
+            minutes = cal.get( Calendar.MINUTE );  
+            seconds = cal.get( Calendar.SECOND );  
+  
+            SimpleDateFormat formatter = new SimpleDateFormat("hh:mm:ss");  
+            Date date = cal.getTime();  
+            timeString = formatter.format( date );  
+  
+            printTime();  
+  
+            t.sleep( 1000 );  // interval given in milliseconds  
+         }  
+      }  
+      catch (Exception e) { }  
+ }  
+  
+public void printTime(){  
+b.setText(timeString);  
+}
+}
+
+
+import java.util.*;
+class subnet_number							//subnet_number
+{
+    public static String method2(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="";
+        if(n1>=1&&n1<=126)
+        {
+            str=s1+".0.0.0";
+        }
+        if(n1>=128&&n1<=191)
+        {
+            str=s1+"."+s2+".0.0";
+        }
+        if(n1>=192&&n1<=223)
+        {
+            str=s1+"."+s2+"."+s3+".0";
+        }
+        if(n1>=224&&n1<=239)
+        {
+            str="No subnetting";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            str="No subnetting";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            str="No subnetting";
+        }
+        return str;
+    }
+}
+  
+
+import java.util.*;					//first_id
+class first_id
+{
+    public static String method5(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="";
+        if(n1>=1&&n1<=126)
+        {
+            str=s1+".0.0.1";
+        }
+        if(n1>=128&&n1<=191)
+        {
+            str=s1+"."+s2+".0.1";
+        }
+        if(n1>=192&&n1<=223)
+        {
+            str=s1+"."+s2+"."+s3+".1";
+        }
+        if(n1>=224&&n1<=239)
+        {
+            str="Not Available";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            str="Not Available";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            str="Not Available";
+        }
+        return str;
+    }
+}
+          
+ 
+import java.util.*;						//number_of_host
+
+class number_of_host
+{
+    public static String method4(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="",s="";
+        double n=0;
+        int m=0;
+        if(n1>=1&&n1<=126)
+        {
+            n=Math.pow(2,24);
+            m=(int)n;
+            s=Integer.toString(m);
+            str="2^24 = "+s;
+        }
+        if(n1>=128&&n1<=191)
+        {
+            n=Math.pow(2,16);
+            m=(int)n;
+            s=Integer.toString(m);
+            str="2^24 = "+s;
+        }
+        if(n1>=192&&n1<=223)
+        {
+           n=Math.pow(2,8);
+            m=(int)n;
+            s=Integer.toString(m);
+            str="2^24 = "+s;
+        }
+        if(n1>=224&&n1<=239)
+        {
+            str="Class - D";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            str="Special Cases";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            str="Special Cases";
+        }
+        return str;
+    }
+}
+    
+
+import java.util.*; 					//last_id
+class last_id
+{
+    public static String method6(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="";
+        if(n1>=1&&n1<=126)
+        {
+            str=s1+".255.255.254";
+        }
+        if(n1>=128&&n1<=191)
+        {
+            str=s1+"."+s2+".255.254";
+        }
+        if(n1>=192&&n1<=223)
+        {
+            str=s1+"."+s2+"."+s3+".254";
+        }
+        if(n1>=224&&n1<=239)
+        {
+            str="Not Available";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            str="Not Available";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            str="Not Available";
+        }
+        return str;
+    }
+}
+
+
+import java.util.*;							//limited_broadcasting
+class limited_broadcasting
+{
+    public static String method8(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="";
+        if(n1>=1&&n1<=126)
+        {
+            str="255.255.255.255";
+        }
+        if(n1>=128&&n1<=191)
+        {
+            str="255.255.255.255";
+        }
+        if(n1>=192&&n1<=223)
+        {
+            str="255.255.255.255";
+        }
+        if(n1>=224&&n1<=239)
+        {
+            str="Not Available";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            str="Not Available";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            str="Not Available";
+        }
+        return str;
+    }
+}
+        
+  
+
+import java.util.*;							//directed_broadcasting
+class directed_broadcasting
+{
+    public static String method7(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="";
+        if(n1>=1&&n1<=126)
+        {
+            str=s1+"."+"255"+"."+"255"+"."+"255";
+        }
+        if(n1>=128&&n1<=191)
+        {
+            str=s1+"."+s2+"."+"255"+".255";
+        }
+        if(n1>=192&&n1<=223)
+        {
+            str=s1+"."+s2+"."+s3+"."+".255";
+        }
+        if(n1>=224&&n1<=239)
+        {
+            str="Not Available";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            str="Not Available";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            str="Not Available";
+        }
+        return str;
+    }
+}
+     
+
+import java.util.*;							//public_private
+class public_private
+{
+    public static String method11(String s1,String s2,String s3,String s4)
+    {        
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="";
+        if(n1==10)
+        {
+            str="Private";
+        }
+        else if(n1==172&&(n2>=16)&&(n2<=31))
+        {
+            str="Private";
+        }
+        else if(n1==192&&n2==168)
+        {
+            str="Private";
+        }
+        else
+        {
+            str="Public";
+        }
+        return str;
+    }
+}	 
+
+
+import java.util.*;								//number_of_subnet
+class number_of_subnet
+{
+    public static String method9(String s1,String s2,String s3,String s4)
+    {
+        int n1=Integer.parseInt(s1);
+        int n2=Integer.parseInt(s2);
+        int n3=Integer.parseInt(s3);
+        int n4=Integer.parseInt(s4);
+        String str="",st="",sss="";
+        int count=0,c=0;
+        if(n1>=1&&n1<=126)
+        {
+            s1=Integer.toBinaryString(n2);
+            s2=Integer.toBinaryString(n3);
+            s3=Integer.toBinaryString(n4);
+            str=s1+s2+s3;
+            if(s1.length()==8)
+            {
+                for(int i=0;i<str.length();i++)
+                {
+                    if(str.charAt(i)=='1')
+                    count++;
+                    if(str.charAt(i)=='0')
+                    break;
+                }
+            }
+            
+            if(count==0)
+            st="0";
+            else
+            {
+                c=count;
+                
+                double mn;
+                mn=Math.pow(2,c);
+                int m=(int)mn-2;
+                sss=Integer.toString(m);
+                String g=Integer.toString(c);
+                st="2^"+g+" - 2 = "+sss;
+            }
+            
+        }
+        if(n1>=128&&n1<=191)
+        {
+            
+            s1=Integer.toBinaryString(n3);
+            s2=Integer.toBinaryString(n4);
+            str=s1+s2;
+            if(s1.length()==8)
+            {
+                for(int i=0;i<str.length();i++)
+                {
+                    if(str.charAt(i)=='1')
+                    count++;
+                    if(str.charAt(i)=='0')
+                    break;
+                }
+            }
+            if(count==0)
+            st="0";
+            else
+            {
+                c=count;
+                
+                double mn;
+                mn=Math.pow(2,c);
+                int m=(int)mn-2;
+                sss=Integer.toString(m);
+                String g=Integer.toString(c);
+                st="2^"+g+" - 2 = "+sss;
+            }
+        }
+        if(n1>=192&&n1<=223)
+         {
+            
+            s1=Integer.toBinaryString(n4);
+            str=s1;
+            if(s1.length()==8)
+            {
+                for(int i=0;i<str.length();i++)
+                {
+                    if(str.charAt(i)=='1')
+                    count++;
+                    if(str.charAt(i)=='0')
+                    break;
+                }
+            }
+            
+            if(count==0)
+            st="0";
+            else
+            {
+                c=count;
+                
+                double mn;
+                mn=Math.pow(2,c);
+                int m=(int)mn-2;
+                sss=Integer.toString(m);
+                String g=Integer.toString(c);
+                st="2^"+g+" - 2 = "+sss;
+            }
+            
+        }
+        if(n1>=224&&n1<=239)
+        {
+            st="Not Available";
+        }
+        if(n1>=240&&n1<=255&&n4!=255)
+        {
+            st="Not Available";
+        }
+        if(n1==0||n1==127||(n1==255&&n2==255&&n3==255&&n4==255))
+        {
+            st="Not Available";
+        }
+        return st;
+    }
+}
+  
+
+
+import java.util.*;										//subnet_number_ss
+class subnet_number_ss
+{
+    public static String m1(String s1,String s2,String s3,String s4,int mask)
+    {
+        int c=7,str1=0,str2=0,str3=0,str4=0;
+        int i=0;
+        double sum=0;
+        String str="";
+        if(mask<=8)
+        {
+            for(i=0;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str1=(int)sum;
+            }
+        }
+        else if(mask>8&&mask<=16)
+        {
+            for(i=8;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str2=(int)sum;
+            }
+        }
+        
+        else if(mask>16&&mask<=24)
+        {
+            for(i=16;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str3=(int)sum;
+            }
+        }
+        
+        else if(mask>24&&mask<=32)
+        {
+            for(i=24;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str4=(int)sum;
+            }
+        }
+        
+        
+        if(mask<=8)
+        str=str1+".0.0.0";
+        else if(mask>8&&mask<=16)
+        str="255."+str2+".0.0";
+        else if(mask>16&&mask<=24)
+        str="255.255."+str3+".0";
+        else if(mask>24&&mask<=32)
+        str="255.255.255."+str4;
+        return str;
+    }
+    
+}
+  
+
+import java.util.*;									//valid_host_ss
+class valid_host_ss
+{
+    public static String m3(String s1,String s2,String s3,String s4,int mask)
+    {
+        double m;
+        int n;
+        int c=(32-mask);
+        m=Math.pow(2,c);
+        n=(int)m-2;
+        String str="2^"+Integer.toString(c)+" - 2 = "+Integer.toString(n);
+        return str;
+    }
+}  
+
+
+import java.util.*;							//first_host_id_ss
+class first_host_id_ss
+{
+    public static String m5(String ss1,String ss2,String ss3,String ss4,int mask)
+    {
+
+        int s1=Integer.parseInt(ss1);
+        int s2=Integer.parseInt(ss2);
+        int s3=Integer.parseInt(ss3);
+        int s4=Integer.parseInt(ss4);
+        
+        int c=7,str1=0,str2=0,str3=0,str4=0;
+        int i=0;
+        double sum=0;
+        String str="";
+        
+        if(mask<=8)
+        {
+            for(i=0;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str1=(int)sum;
+            }
+        }
+        else if(mask>8&&mask<=16)
+        {
+            for(i=8;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str2=(int)sum;
+            }
+        }
+        
+        else if(mask>16&&mask<=24)
+        {
+            for(i=16;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str3=(int)sum;
+            }
+        }
+        
+        else if(mask>24&&mask<=32)
+        {
+            for(i=24;i<mask;i++)
+            {
+                sum=sum+Math.pow(2,c);
+                c--;
+                str4=(int)sum;
+            }
+        }
+        
+        
+        if(mask<=8)
+        str=(s1&str1)+".0.0.1";
+        else if(mask>8&&mask<=16)
+        str=ss1+"."+(str2&s2)+".0.1";
+        else if(mask>16&&mask<=24)
+        str=ss1+"."+ss2+"."+(str3&s3) +".1";
+        else if(mask>24&&mask<=32)
+        str=ss1+"."+ss2+"."+ss3+"."+((str4&s4)+1);
+        return str;
+    }
+    
+}
+  
+
+import java.util.*;										//number_of_host_ss
+class number_of_host_ss
+{
+    public static String m4(String s1,String s2,String s3,String s4,int mask)
+    {
+        double m;
+        int n;
+        int c=(32-mask);
+        m=Math.pow(2,c);
+        n=(int)m;
+        String str="2^"+Integer.toString(c)+" = "+Integer.toString(n);
+        return str;
+    }
+}  
+
+import java.util.*;									//last_host_id
+class last_host_id
+{
+    public static String m6(String s1,String s2,String s3,String s4,int mask)
+    //public static void main(String args[])
+    {
+        
+        int tt,n,m,s=0,n1=0,c=7,n2=0,n3=0,n4=0; 
+        String str="",ch="";
+        String ss1="",ss2="",ss3="",ss4="";
+        String ssa1="",ssa2="",ssa3="",ssa4="";
+        double r=0;
+        String t="";
+        String fs1="",fs2="",fs3="",fs4="";
+        
+        if(mask>24&&mask<=32)
+        {
+            m=Integer.parseInt(s4);
+            if(mask%8==0)
+            r=255;
+            else
+            {
+            for(int i=0;i<(mask%8);i++)
+            {
+                r=r+Math.pow(2,c);
+                c--;
+            }
+           }
+            s=(int)r;
+            tt=(s&m);
+            t=Integer.toBinaryString(tt);
+            char a[]=t.toCharArray();
+            for(int i=(mask%8);i<8;i++)
+            {
+                a[i]='1';
+            }
+            for(int i=0;i<a.length;i++)
+            {
+                ss4=ss4+a[i];
+            }
+            n1=Integer.parseInt(ss4,2);
+
+        }
+        
+       
+      
+        if(mask<=8)
+        str=Integer.toString(n1)+".255.255.254";
+        else if(mask>8&&mask<=16)
+        str=s2+"."+Integer.toString(n2)+".255.254";
+        else if(mask>16&&mask<=24)
+        str=s1+"."+s2+"."+Integer.toString(n3)+".254";
+        else if(mask>24&&mask<=32)
+        str=s1+"."+s2+"."+s3+"."+Integer.toString(n4);
+        return str;
+        
+    }
+    }
+    
+
+	import java.util.*;										//limited_broadcasting_ss
+class limited_broadcasting_ss
+{
+    public static String m7(String s1,String s2,String s3,String s4,int mask)
+    {
+        return "255.255.255.255";
+    }
+}
+
+import java.util.*;									//directed_broadcasting_ss
+class directed_broadcasting_ss
+{
+    public static String m66(String s1,String s2,String s3,String s4,int mask)
+    {
+        
+        int t,n,m,r=0,s=0,n1=0,n2=0,n3=0,n4=0; 
+        String str="",ch="";
+        String ss1="",ss2="",ss3="",ss4="";
+        String ssa1="",ssa2="",ssa3="",ssa4="";
+        String fs1="",fs2="",fs3="",fs4="";
+        
+        if(mask<=8)
+        {
+            m=Integer.parseInt(s1);
+            t=m;
+            for(int i=0;i<8;i++)
+            {
+                r=t%2;
+                ch=Integer.toString(r);
+                ssa1=ssa1+ch;
+                t=t/2;
+            }
+            
+        
+        for(int i=ssa1.length()-1;i>=0;i--)
+        {
+            fs1=fs1+ssa1.charAt(i);
+        }
+        char a[]=fs1.toCharArray();
+        for(int i=mask;i<8;i++)
+        {
+            a[i]='1';
+        }
+        for(int i=0;i<a.length;i++)
+         {
+            
+            ss1=ss1+a[i];
+         }
+          n1=Integer.parseInt(ss1,2);
+
+        }
+        
+        if(mask>8&&mask<=16)
+        {
+            m=Integer.parseInt(s2);
+            t=m;
+            for(int i=0;i<8;i++)
+            {
+                r=t%2;
+                ch=Integer.toString(r);
+                ssa2=ssa2+ch;
+                t=t/2;
+            }
+            
+        
+        for(int i=ssa2.length()-1;i>=0;i--)
+        {
+            fs2=fs2+ssa2.charAt(i);
+        }
+        char a[]=fs2.toCharArray();
+        
+        for(int i=mask-8;i<8;i++)
+        {
+            a[i]='1';
+            
+        }
+        
+        for(int i=0;i<a.length;i++)
+         {
+            
+            ss2=ss2+a[i];
+         }
+        
+          n2=Integer.parseInt(ss2,2);
+          
+        }
+        
+        if(mask>16&&mask<=24)
+        {
+            m=Integer.parseInt(s3);
+            t=m;
+            for(int i=0;i<8;i++)
+            {
+                r=t%2;
+                ch=Integer.toString(r);
+                ssa3=ssa3+ch;
+                t=t/2;
+            }
+            
+        
+        for(int i=ssa3.length()-1;i>=0;i--)
+        {
+            fs3=fs3+ssa3.charAt(i);
+        }
+        char a[]=fs3.toCharArray();
+        for(int i=mask-16;i<8;i++)
+        {
+            a[i]='1';
+        }
+        for(int i=0;i<a.length;i++)
+         {
+            
+            ss3=ss3+a[i];
+         }
+         System.out.println(ss3);
+          n3=Integer.parseInt(ss3,2);
+
+        }
+        
+        if(mask>24&&mask<=32)
+        {
+            m=Integer.parseInt(s4);
+            t=m;
+            for(int i=0;i<8;i++)
+            {
+                r=t%2;
+                ch=Integer.toString(r);
+                ssa4=ssa4+ch;
+                t=t/2;
+            }
+            
+        
+        for(int i=ssa4.length()-1;i>=0;i--)
+        {
+            fs4=fs4+ssa4.charAt(i);
+        }
+        char a[]=fs4.toCharArray();
+        for(int i=mask-24;i<8;i++)
+        {
+            a[i]='1';
+        }
+        for(int i=0;i<a.length;i++)
+         {
+            
+            ss4=ss4+a[i];
+         }
+          n4=Integer.parseInt(ss4,2);
+
+        }
+        if(mask<=8)
+        str=Integer.toString(n1)+".255.255.254";
+        else if(mask>8&&mask<=16)
+        str=s2+"."+Integer.toString(n2)+".255.254";
+        else if(mask>16&&mask<=24)
+        str=s1+"."+s2+"."+Integer.toString(n3)+".254";
+        else if(mask>24&&mask<=32)
+        str=s1+"."+s2+"."+s3+"."+Integer.toString(n4);
+        return str;
+    }
+    }
+    
+	
+	
+
+                
+                
